@@ -81,15 +81,27 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
-// TODO: Write your code here
+// DONE: Write your code here
 var testArray = [2,3,4]; //eslint-disable-line
 
 function sumArray(testArray){ //eslint-disable-line
+// '2,3,4 was passed in as an array of numbers, and 9 is their sum.'
+  var theSum = 0;
+  var theSumString = testArray[0];
 
+  for (var i = 0; i < testArray.length; i++) {
+    theSum += testArray[i];
+    if (i > 0) {
+      theSumString = theSumString + ',' + testArray[i];
+    }
+  }
+
+  var sumMessage = theSumString + ' was passed in as an array of numbers, and ' + theSum + ' is their sum.';
+  return [theSum, sumMessage];
 }
 
-// TODO: Here is the test for sumArray(); uncomment it to run it
-// testSumArray(testArray);
+// DONE: Here is the test for sumArray(); uncomment it to run it
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 

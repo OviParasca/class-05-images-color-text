@@ -18,7 +18,7 @@ function sum(a,b){ //eslint-disable-line
 }
 
 // DONE: Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -115,12 +115,27 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
-// Write your code here
+// DONE: Write your code here
 function multiplyArray(testArray){ //eslint-disable-line
+// 'The numbers 2,3,4 have a product of 24.'
+  var theProduct = testArray[0];
+  var productString = testArray[0];
 
+  for (var i = 0; i < testArray.length; i++) {
+    if (i > 0) {
+      theProduct *= testArray[i];
+      productString = productString + ',' + testArray[i];
+    } else {
+      theProduct = testArray[i];
+    }
+  }
+
+  var productMessage = 'The numbers ' + productString + ' have a product of ' + theProduct + '.';
+
+  return [theProduct, productMessage];
 }
 
-// Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+// DONE: Here is the test for multiplyArray(); uncomment it to run it
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
